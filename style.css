@@ -239,7 +239,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Min genişliği 220px'den 180px'e düşürdük */
   gap: 1rem; /* Grid aralığını 2rem'den 1rem'e indirdik */
-  max-width: min-content;
+  max-width: 400px;
   margin: 0 auto;
 }
 .team-member {
