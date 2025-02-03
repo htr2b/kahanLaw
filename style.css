@@ -1,9 +1,9 @@
 /* CSS Değişkenleri ile Temel Renkler */
 :root {
-    --primary-color: #172516;       /* Ana arka plan rengi */
-    --navbar-color: #172516;
+    --primary-color: #343B30;       /* Ana arka plan rengi */
+    --navbar-color: #343B30;
     --secondary-color: #ffffff;     /* Buton, ikon ve vurgulama rengi */
-    --card-bg: #172516;             /* Kart arka plan rengi */
+    --card-bg: #343B30;             /* Kart arka plan rengi */
     --text-color: #ddd;
     --transition-speed: 0.3s;
   }
