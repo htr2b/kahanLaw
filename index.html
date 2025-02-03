@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hukuk Danışmanlık</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <!-- Preloader (Sayfa yüklenirken gösterilecek animasyon) -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Üst Navigasyon -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">HukukDanışmanlık</a>
+        <ul class="nav-links">
+          <li><a href="#home">Ana Sayfa</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#team">Ekibimiz</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Bölümü -->
+  <section id="home" class="hero fade-in">
+    <div class="container">
+      <h1>Güvenilir Hukuk Danışmanlığı</h1>
+      <p>Hukuki sorunlarınızda profesyonel ve modern çözümler sunuyoruz.</p>
+      <a href="#contact" class="btn">Bize Ulaşın</a>
+    </div>
+  </section>
+
+  <!-- Hizmetler Bölümü -->
+  <section id="services" class="services fade-in">
+    <div class="container">
+      <h2>Hizmetlerimiz</h2>
+      <div class="services-container">
+        <div class="service-item">
+          <i class="icon">&#9874;</i>
+          <h3>Ceza Hukuku</h3>
+          <p>Ceza hukuku alanında deneyimli ekibimizle adaletin sağlanmasına katkıda bulunuyoruz.</p>
+        </div>
+        <div class="service-item">
+          <i class="icon">&#128187;</i>
+          <h3>Aile Hukuku</h3>
+          <p>Ailevi sorunlarınızda yanınızda olarak en uygun çözümleri sunuyoruz.</p>
+        </div>
+        <div class="service-item">
+          <i class="icon">&#128200;</i>
+          <h3>İş Hukuku</h3>
+          <p>İş yaşamında haklarınızı korumanıza yardımcı oluyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hakkımızda Bölümü -->
+  <section id="about" class="about fade-in">
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <p>
+        Uzun yıllara dayanan tecrübemiz ve alanında uzman ekibimizle hukuki sorunlarınıza modern ve çözüm odaklı yaklaşım sunuyoruz.
+        Müşterilerimizin ihtiyaçlarını dinleyerek en uygun çözümleri üretmeyi hedefliyoruz.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ekibimiz Bölümü -->
+  <section id="team" class="team fade-in">
+    <div class="container">
+  
+      <div class="team-container">
+        <div class="team-member">
+          <img src="images/member1.jpg" alt="Avukat A">
+          <h3></h3>
+          <p>Avukat Gökay Kahan</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim Bölümü -->
+  <section id="contact" class="contact fade-in">
+    <div class="container">
+      <h2>İletişim</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Ad Soyad</label>
+          <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Posta</label>
+          <input type="email" id="email" name="email" placeholder="E-Posta adresiniz" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mesaj</label>
+          <textarea id="message" name="message" placeholder="Mesajınızı yazın" required></textarea>
+        </div>
+        <button type="submit" class="btn">Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Altbilgi -->
+  <footer class="fade-in">
+    <div class="container">
+      <p>&copy; 2025 Hukuk Danışmanlık. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top (Başa Dön) Butonu -->
+  <button id="backToTop" title="Başa Dön">&#8679;</button>
+
+  <!-- Hızlı Yardım (Quick Help) Modal -->
+  <div id="quickHelpModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Hızlı Yardım</h2>
+      <textarea placeholder="Buraya kanundan bir şeyler yazabilirsiniz..."></textarea>
+      <button class="btn" id="saveHelp">Kaydet</button>
+    </div>
+  </div>
+
+  <!-- Hızlı Yardım Butonu (Sabit Buton) -->
+  <button id="quickHelpBtn" title="Hızlı Yardım">Hızlı Yardım</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
