@@ -8,21 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 600);
     });
   
-    /* Hamburger Menü Aç/Kapa */
+    /* Hamburger Menü */
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-  
     hamburger.addEventListener('click', function () {
       navLinks.classList.toggle('active');
     });
   
-    /* Intersection Observer ile Fade-in Animasyonları */
+    /* Fade-in Animasyonları */
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
       threshold: 0.2,
       rootMargin: "0px 0px -50px 0px"
     };
-  
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -31,12 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }, appearOptions);
-  
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
   
-    /* Back to Top Butonu */
+    /* Back-to-Top Butonu */
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', function() {
       if (window.pageYOffset > 300) {
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         backToTop.style.display = 'none';
       }
     });
-  
     backToTop.addEventListener('click', function() {
       window.scrollTo({
         top: 0,
@@ -53,19 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    /* Hızlı Yardım (Quick Help) Modal Fonksiyonelliği */
+    /* Hızlı Yardım (Quick Help) Modal */
     const quickHelpBtn = document.getElementById('quickHelpBtn');
     const quickHelpModal = document.getElementById('quickHelpModal');
     const modalClose = document.querySelector('.modal-content .close');
-  
     quickHelpBtn.addEventListener('click', function() {
       quickHelpModal.style.display = 'block';
     });
-  
     modalClose.addEventListener('click', function() {
       quickHelpModal.style.display = 'none';
     });
-  
     window.addEventListener('click', function(event) {
       if (event.target == quickHelpModal) {
         quickHelpModal.style.display = 'none';

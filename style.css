@@ -1,9 +1,9 @@
 /* CSS Değişkenleri ile Temel Renkler */
 :root {
     --primary-color: #343B30;       /* Ana arka plan rengi */
-    --navbar-color: #343B30;
-    --secondary-color: #ffffff;     /* Buton, ikon ve vurgulama rengi */
-    --card-bg: #343B30;             /* Kart arka plan rengi */
+    --navbar-color: rgba(52, 59, 48, 0.95);
+    --secondary-color: #ffffff;     /* Vurgulama, buton ve ikon rengi */
+    --card-bg: #3a443b;             /* Kart arka plan rengi */
     --text-color: #ddd;
     --transition-speed: 0.3s;
   }
@@ -59,7 +59,7 @@
     to { transform: rotate(360deg); }
   }
   
-  /* Navbar (Üst Menü) */
+  /* Navbar */
   .navbar {
     background: var(--navbar-color);
     padding: 1rem 0;
@@ -67,7 +67,7 @@
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: background var(--transition-speed) ease;
   }
   
@@ -104,7 +104,7 @@
     color: var(--secondary-color);
   }
   
-  /* Hamburger Menüsü (Mobil) */
+  /* Hamburger Menü (Mobil) */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -119,7 +119,7 @@
     border-radius: 5px;
   }
   
-  /* Mobilde aktif menü */
+  /* Mobil Menü Aktif */
   .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -131,14 +131,14 @@
     padding: 1rem;
   }
   
-  /* Hero (Ana Sayfa) Bölümü */
+  /* Hero Bölümü */
   .hero {
     background-color: var(--primary-color);
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    padding-top: 80px; /* Navbar yüksekliğini telafi etmek için */
+    padding-top: 80px; /* Navbar yüksekliğini telafi eder */
   }
   
   .hero .container {
@@ -169,7 +169,7 @@
   }
   
   .btn:hover {
-    background: #ffffff;
+    background: #e6b800;
     transform: translateY(-3px);
   }
   
@@ -198,13 +198,13 @@
     border-radius: 10px;
     width: 300px;
     color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   }
   
   .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.4);
   }
   
   .service-item .icon {
@@ -256,13 +256,13 @@
     border-radius: 10px;
     width: 250px;
     color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   }
   
   .team-member:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.4);
   }
   
   .team-member img {
@@ -305,7 +305,7 @@
     width: 100%;
     padding: 0.75rem;
     background-color: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 5px;
     color: #fff;
   }
@@ -329,7 +329,7 @@
     font-size: 0.9rem;
   }
   
-  /* Back to Top Butonu */
+  /* Back-to-Top Butonu */
   #backToTop {
     position: fixed;
     bottom: 30px;
@@ -366,12 +366,12 @@
   
   #quickHelpBtn:hover {
     transform: translateY(-3px);
-    background: #ffffff;
+    background: #616160;
   }
   
   /* Modal Stilleri */
   .modal {
-    display: none; /* Varsayılan gizli */
+    display: none; /* Gizli */
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -418,7 +418,7 @@
     cursor: pointer;
   }
   
-  /* Responsive (Mobil) Ayarlar */
+  /* Responsive Ayarlar */
   @media (max-width: 768px) {
     .navbar .nav-links {
       display: none;
