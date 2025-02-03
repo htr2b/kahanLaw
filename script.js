@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    /* Preloader Kaldırma */
+    // Preloader Kaldırma
     const preloader = document.getElementById('preloader');
     window.addEventListener('load', function() {
       preloader.style.opacity = '0';
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 600);
     });
   
-    /* Hamburger Menü */
+    // Hamburger Menü Aç/Kapa
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', function () {
+    hamburger.addEventListener('click', function() {
       navLinks.classList.toggle('active');
     });
   
-    /* Fade-in Animasyonları */
+    // Intersection Observer ile Fade-in Animasyonları
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
       threshold: 0.2,
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       appearOnScroll.observe(fader);
     });
   
-    /* Back-to-Top Butonu */
+    // Back-to-Top Butonu
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', function() {
       if (window.pageYOffset > 300) {
@@ -43,13 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     backToTop.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   
-    /* Hızlı Yardım (Quick Help) Modal */
+    // Hızlı Yardım (Quick Help) Modal
     const quickHelpBtn = document.getElementById('quickHelpBtn');
     const quickHelpModal = document.getElementById('quickHelpModal');
     const modalClose = document.querySelector('.modal-content .close');
