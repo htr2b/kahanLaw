@@ -237,13 +237,26 @@ footer .social li a {
   color: var(--primary-color);
   font-weight: 600;
 }
+/* Mobil Navigasyon */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Mobil Menü İçin */
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobil Menü Açılır/Kapanır */
   .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
@@ -259,29 +272,36 @@ footer .social li a {
 
   .mobile-menu-icon {
     display: flex;
-  }
-}
-
-/* Mobil Hero Bölümü */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.8rem;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
   }
 
-  .hero p {
-    font-size: 1.1rem;
+  .mobile-menu-icon span {
+    width: 30px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
-}
 
-/* Mobil Grid Yapısı */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
+  /* Mobil Grid Ayarları */
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
