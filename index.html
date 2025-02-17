@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kahan Hukuk - Danışmanlık</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#">Kahan Hukuk</a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" class="active">Ana Sayfa</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#practice">Hizmet Alanlarımız</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Hukukta Güven, Adalette Öncülük</h1>
+      <p>Uzman ekibimizle yanınızdayız.</p>
+      <a href="#contact" class="btn-primary">Danışmanlık Alın</a>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <h2>Hakkımızda</h2>
+      <p>
+        Kahan Hukuk, deneyimli ve uzman avukat kadrosuyla hukuki danışmanlık, dava takibi ve çözümsel hizmetler sunar. Amacımız, müvekkillerimizin haklarını korumak ve adalete ulaşmalarını sağlamaktır.
+      </p>
+      <a href="#" class="btn-secondary">Detaylı Bilgi</a>
+    </div>
+  </section>
+
+  <section class="section practice-areas" id="practice">
+    <div class="container">
+      <h2>Hizmet Alanlarımız</h2>
+      <div class="grid">
+        <a href="ceza.html" class="card">
+          <h3>Ceza Hukuku</h3>
+          <p>Adaletin sağlanması için profesyonel ceza hukuku danışmanlığı.</p>
+        </a>
+        <a href="bosanma.html" class="card">
+          <h3>Boşanma Hukuku</h3>
+          <p>Hassas süreçlerde tarafsız ve güvenilir destek.</p>
+        </a>
+        <a href="sigorta.html" class="card">
+          <h3>Sigorta Hukuku</h3>
+          <p>Poliçe uyuşmazlıklarına etkin çözümler.</p>
+        </a>
+        <a href="miras.html" class="card">
+          <h3>Miras Hukuku</h3>
+          <p>Miras paylaşımı ve vasiyetname düzenlemesinde titiz çalışma.</p>
+        </a>
+        <a href="tapu.html" class="card">
+          <h3>Tapu İptali</h3>
+          <p>Tapu iptali ve tescil işlemlerinde uzman destek.</p>
+        </a>
+        <a href="icra.html" class="card">
+          <h3>İcra Hukuku</h3>
+          <p>İcra takibi ve çözüm odaklı çalışmalar.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2>İletişime Geçin</h2>
+      <p>Her türlü hukuki soru ve danışmanlık için bizimle iletişime geçebilirsiniz.</p>
+      <a href="https://api.whatsapp.com/send?phone=90" class="btn-primary">Mesaj Gönderin</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Kahan Hukuk Danışmanlık.</p>
+      <ul class="social">
+        <li><a href="https://www.instagram.com/kahanhukuk/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/g%C3%B6kay-kahan-a706ab225/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navUl = document.querySelector('.main-nav ul');
+
+    mobileMenuIcon.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
