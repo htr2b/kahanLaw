@@ -204,8 +204,20 @@ body {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+
+}
+.arrow-icon {
+  margin-left: 8px;
+  font-size: 1rem;
+  color: #b6b6b6;
+  transition: transform 0.3s;
 }
 
+.card:hover .arrow-icon {
+  transform: translateX(5px);
+}
 .contact p {
   font-size: 1rem;
   margin-bottom: 2rem;
@@ -238,78 +250,89 @@ footer .social li a {
   font-weight: 600;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
+
+   @media (min-width: 1440px) {
+    .container {
+      max-width: 1400px;
+    }
+    .hero h1 {
+      font-size: 4rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+    }
   }
 
-  .hero h1 {
-    font-size: 2.8rem;
+  @media (max-width: 1439px) and (min-width: 1024px) {
+    .hero {
+      height: 90vh; 
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
   }
 
-  .hero p {
-    font-size: 1.1rem;
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .hero {
+      height: auto;
+      padding: 4rem 1rem; 
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+    }
+  
+    .practice-areas .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-}
+  
 
-@media (max-width: 768px) {
-
-  .main-nav {
-    position: relative;
+  @media (max-width: 767px) {
+    .hero {
+      height: auto; 
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+      padding: 0.6rem 1.2rem;
+    }
+  
+    .section {
+      padding: 2rem 0;
+    }
+  
+    .practice-areas .grid {
+      grid-template-columns: 1fr;
+    }
   }
+  
 
-  .main-nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: var(--header-bg);
-    padding: 1rem 0;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    z-index: 999;
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 0.95rem;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+    }
   }
-
-  .main-nav ul.active {
-    display: flex;
-  }
-
-  .mobile-menu-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
-  }
-
-  .mobile-menu-icon span {
-    width: 30px;
-    height: 3px;
-    background: var(--secondary-color);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+  
