@@ -5,14 +5,10 @@ mobileMenuIcon.addEventListener('click', () => {
   navbarList.classList.toggle('active');
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+const navLinks = document.querySelectorAll('.main-nav ul li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navbarList.classList.remove('active');
   });
 });
+
