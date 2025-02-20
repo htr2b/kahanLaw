@@ -12,7 +12,7 @@ navLinks.forEach(link => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   function easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   }
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.querySelectorAll('a').forEach(link => {
-    link.addEventListener("click", function(e) {
+    link.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
       if (targetId === "#main" || targetId === "#about" || targetId === "#contact") {
         e.preventDefault();
@@ -45,5 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const servicesItem = document.querySelector('.services > a');
+  servicesItem.addEventListener('click', function(e) {
+    e.preventDefault();
+    const parentLi = this.parentElement;
+    parentLi.classList.toggle('open');
   });
 });

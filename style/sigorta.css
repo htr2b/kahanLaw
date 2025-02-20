@@ -30,6 +30,58 @@ body {
     margin: 0 auto;
 }
 
+.has-submenu {
+    display: none;
+    position: relative;
+}
+
+.has-submenu .submenu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+  }
+
+.arrow {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+.submenu {
+    list-style: none;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+
+.submenu li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.submenu li a:hover {
+    background: darkorange;
+}
+
+.has-submenu:hover .submenu {
+    display: inline-block;
+}
+
 .site-header {
     background: var(--header-bg);
     position: fixed;
@@ -234,6 +286,16 @@ footer .social li a:hover {
 }
 
 @media (max-width: 767px) {
+    .has-submenu {
+        display: block;
+    }
+
+    .submenu {
+        display: none;
+        align-items: center;
+        text-align: center;
+    }
+
     .logo a {
         display: inline-block;
         margin-bottom: 1rem;
