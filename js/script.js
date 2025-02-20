@@ -12,3 +12,38 @@ navLinks.forEach(link => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  function smoothScrollTo(target, duration) {
+    const start = window.pageYOffset;
+    const targetPosition = target.getBoundingClientRect().top;
+    const startTime = performance.now();
+
+    function scroll() {
+      const currentTime = performance.now();
+      const time = Math.min(1, (currentTime - startTime) / duration);
+      const easedTime = easeInOutQuad(time);
+      window.scrollTo(0, start + targetPosition * easedTime);
+      if (time < 1) {
+        requestAnimationFrame(scroll);
+      }
+    }
+    scroll();
+  }
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener("click", function(e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#main" || targetId === "#about" || targetId === "#contact") {
+        e.preventDefault();
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          smoothScrollTo(targetSection, 500);
+        }
+      }
+    });
+  });
+});

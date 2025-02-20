@@ -9,6 +9,23 @@
   --overlay-color: transparent;
   --btn-bg: var(--primary-color);
   --btn-hover: var(--secondary-color);
+  --sidebar-width: 220px;
+  --sidebar-hover: #444444;
+  border-color: #344137;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 * {
@@ -22,6 +39,7 @@ body {
   background: linear-gradient(to bottom, var(--start-color), var(--end-color));
   color: var(--text-color);
   line-height: 1.6;
+
 }
 
 .container {
@@ -29,8 +47,27 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.site-header a {
+  text-shadow:
+    -0.5px -0.5px 0 black,
+    0.5px -0.5px 0 black,
+    -0.5px 0.5px 0 black,
+    0.5px 0.5px 0 black;
+}
+
+.hero h1,
+.hero p {
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+
 section[id] {
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 .site-header {
@@ -68,6 +105,7 @@ section[id] {
   font-weight: 600;
   color: var(--text-color);
   transition: color 0.3s ease;
+
 }
 
 .main-nav ul li a:hover {
@@ -92,7 +130,9 @@ section[id] {
 .hero {
   height: 100vh;
   position: relative;
-  background: url('https://source.unsplash.com/1600x900/?law,justice') no-repeat center center/cover;
+  background: url('../assets/anasayfa.jpg') no-repeat center center;
+  background-attachment: scroll;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,59 +168,19 @@ section[id] {
 
 .btn-primary {
   display: inline-block;
-  background: white;
+  background: darkorange;
   color: black;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 0.6rem;
   border-radius: 4px;
+  border: transparent;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
 }
 
 .btn-primary:hover {
   background: darkorange;
   transform: translateY(-2px);
-}
-
-
-.section {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.about p {
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  font-size: 1.1rem;
-  color: var(--text-color);
-}
-
-.btn-secondary {
-  display: inline-block;
-  background: var(--accent-color);
-  color: black;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: darkorange;
-}
-
-.practice-areas .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  padding: 20px;
 }
 
 .card {
@@ -216,37 +216,152 @@ section[id] {
   transform: translateX(5px);
 }
 
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.sidebar {
+  margin-top: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 1rem;
+  flex: 1;
+
+}
+
+.sidebar a {
+  text-shadow:
+    -0.5px -0.5px 0 black,
+    0.5px -0.5px 0 black,
+    -0.5px 0.5px 0 black,
+    0.5px 0.5px 0 black;
+}
+
+.sidebar-menu li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--sidebar-fg);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+}
+
+.sidebar-menu li a:hover {
+  background: orange;
+}
+
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: var(--accent-color);
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: darkorange;
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  background: url('../assets/iletisim.jpg') no-repeat center center;
+  background-attachment: scroll;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.contact h2 {
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
 .contact p {
+  text-shadow:
+    -0.5px -0.5px 0 black,
+     0.5px -0.5px 0 black,
+    -0.5px  0.5px 0 black,
+     0.5px  0.5px 0 black;
   font-size: 1rem;
   margin-bottom: 2rem;
-}
-
-footer {
-  background: var(--header-bg);
-  padding: 2rem 0;
+  color: #fff;
   text-align: center;
-  border-top: 1px solid var(--start-color);
-  margin-top: 4rem;
 }
 
-footer p {
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.footer p {
+  margin: 0;
   font-size: 0.9rem;
-  color: var(--primary-color);
 }
 
-footer .social {
+.footer .social {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
 }
 
-footer .social li a {
+.footer .social li a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: #fff;
   font-weight: 600;
+  transition: color 0.2s ease;
 }
+
+.footer .social li a:hover {
+  color: darkorange;
+}
+
+
 
 @media (min-width: 1440px) {
   .container {
@@ -259,6 +374,10 @@ footer .social li a {
 
   .hero p {
     font-size: 1.3rem;
+  }
+
+  .practice-areas {
+    display: none;
   }
 }
 
@@ -273,6 +392,10 @@ footer .social li a {
 
   .hero p {
     font-size: 1.2rem;
+  }
+
+  .practice-areas {
+    display: none;
   }
 }
 
@@ -291,12 +414,16 @@ footer .social li a {
     font-size: 1.1rem;
   }
 
-  .practice-areas .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .practice-areas {
+    display: none;
   }
+
 }
 
 @media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
 
   .logo a {
     display: inline-block;
@@ -326,12 +453,14 @@ footer .social li a {
     padding: 2rem 0;
   }
 
-  .practice-areas .grid {
-    grid-template-columns: 1fr;
-  }
 
   .main-nav {
     position: relative;
+  }
+
+  .content {
+    padding: 2rem;
+    min-height: 100vh;
   }
 
   .main-nav ul {
@@ -341,7 +470,7 @@ footer .social li a {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -351,6 +480,14 @@ footer .social li a {
     transition: all 0.3s ease-in-out;
   }
 
+  .practice-areas .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 20px;
+  }
 
   .main-nav ul.active {
     display: flex;
@@ -365,6 +502,7 @@ footer .social li a {
     top: 15px;
     right: 20px;
     z-index: 1000;
+    margin-top: 12px;
   }
 
   .mobile-menu-icon span {
@@ -377,9 +515,10 @@ footer .social li a {
 }
 
 @media (max-width: 480px) {
-  .hero{
+  .hero {
     padding: 100px 20px;
   }
+
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -394,5 +533,14 @@ footer .social li a {
 
   .card p {
     font-size: 0.9rem;
+  }
+
+  .practice-areas .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 20px;
   }
 }
