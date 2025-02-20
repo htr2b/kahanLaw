@@ -146,7 +146,6 @@ body {
 }
 
 .hero h1,
-h2,
 .hero p {
     text-shadow:
         -1px -1px 0 black,
@@ -280,9 +279,6 @@ footer .social li a:hover {
         font-size: 1.1rem;
     }
 
-    .practice-areas .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 767px) {
@@ -322,10 +318,6 @@ footer .social li a:hover {
 
     .section {
         padding: 2rem 0;
-    }
-
-    .practice-areas .grid {
-        grid-template-columns: 1fr;
     }
 
     .main-nav {
