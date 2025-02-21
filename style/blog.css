@@ -1,5 +1,5 @@
 :root {
-  --start-color: #020205b6;
+  --start-color: #5f562c;
   --end-color: #646464;
   --primary-color: #b6b6b6;
   --secondary-color: #e0e0e0;
@@ -15,9 +15,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-attachment: scroll;
 }
 
-html, body {
+body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to bottom, var(--start-color), var(--end-color));
   color: var(--text-color);
@@ -48,12 +49,9 @@ html, body {
   justify-content: space-between;
 }
 
-.site-header a {
-  text-shadow:
-    -0.5px -0.5px 0 black,
-    0.5px -0.5px 0 black,
-    -0.5px 0.5px 0 black,
-    0.5px 0.5px 0 black;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo a {
@@ -65,6 +63,7 @@ html, body {
 
 .main-nav {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -74,20 +73,29 @@ html, body {
   gap: 1.5rem;
 }
 
-.main-nav ul li {
-  position: relative;
-}
-
 .main-nav ul li a {
   text-decoration: none;
   font-weight: 600;
   color: var(--text-color);
   transition: color 0.3s ease;
-  display: inline-block;
 }
 
 .main-nav ul li a:hover {
   color: darkorange;
+}
+
+.mobile-menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.mobile-menu-icon span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
 }
 
 .submenu-parent ul {
@@ -106,8 +114,9 @@ html, body {
 .submenu li a {
   display: block;
   color: #fff;
-  padding: 20px;
+  padding: 20px 20px;
   text-decoration: none;
+  gap: 10px;
 }
 
 .submenu-parent {
@@ -118,36 +127,25 @@ html, body {
   display: block;
 }
 
-.mobile-menu-icon {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.mobile-menu-icon span {
-  width: 25px;
-  height: 3px;
-  background: var(--primary-color);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+.site-header a {
+  text-shadow:
+    -0.5px -0.5px 0 black,
+    0.5px -0.5px 0 black,
+    -0.5px 0.5px 0 black,
+    0.5px 0.5px 0 black;
 }
 
 .hero {
   height: 100vh;
   position: relative;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ), 
-    url('../assets/bosanma.webp') no-repeat center center;
-  background-attachment: scroll;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 1rem;
   color: var(--text-color);
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 .hero-overlay {
@@ -185,14 +183,77 @@ html, body {
 }
 
 .section {
-  padding: 4rem 4rem;
-  text-align: left;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section#blog {
+  width: 80%;
+  /* Örneğin sayfanın %80'i kadar */
+  max-width: 1200px;
+  /* Çok geniş ekranlarda 1200px'i aşmasın */
+  margin: 0 auto;
+  /* Yatayda ortalama için */
+  text-align: center;
+  /* İçerik de ortalansın */
 }
 
 .section h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-weight: 600;
+  color: var(--accent-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #eee;
+  line-height: 1.4;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
 }
 
 footer {
@@ -200,7 +261,7 @@ footer {
   padding: 2rem 0;
   text-align: center;
   border-top: 1px solid var(--start-color);
-  margin-top: 4rem;
+  justify-content: center;
 }
 
 footer p {
@@ -228,17 +289,18 @@ footer .social li a:hover {
 }
 
 @media (max-width: 767px) {
-  .mobile-menu-icon {
-    display: flex;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
+  .logo a {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .main-nav {
+    position: relative;
   }
 
   .main-nav ul {
-    display: none;
     list-style: none;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -249,13 +311,32 @@ footer .social li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: 3rem;
     z-index: 999;
     transition: all 0.3s ease-in-out;
   }
 
   .main-nav ul.active {
     display: flex;
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-menu-icon span {
+    width: 30px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   .hero {
@@ -273,6 +354,10 @@ footer .social li a:hover {
     margin-bottom: 1.5rem;
   }
 
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+  }
+
   .section {
     padding: 2rem 0;
   }
@@ -284,9 +369,11 @@ footer .social li a:hover {
     padding-top: 100px;
     text-align: center;
   }
+
   .hero h1 {
     font-size: 2.8rem;
   }
+
   .hero p {
     font-size: 1.1rem;
   }
@@ -297,9 +384,11 @@ footer .social li a:hover {
     height: 90vh;
     padding-top: 100px;
   }
+
   .hero h1 {
     font-size: 3.2rem;
   }
+
   .hero p {
     font-size: 1.2rem;
   }
@@ -309,9 +398,11 @@ footer .social li a:hover {
   .container {
     max-width: 1400px;
   }
+
   .hero h1 {
     font-size: 4rem;
   }
+
   .hero p {
     font-size: 1.3rem;
   }

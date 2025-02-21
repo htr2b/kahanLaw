@@ -6,34 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ceza Hukuku - Kahan Hukuk</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style/ceza.css">
   <link rel="icon" href="assets/logo.png" type="image/jpeg">
-  <script src="../js/script.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header" id="head">
     <div class="container header-container">
       <div class="logo">
-        <a href="index.html">Kahan Hukuk</a>
+        <a href="index.html#main">Kahan Hukuk</a>
       </div>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html#main">Ana Sayfa</a></li>
-          <li><a href="index.html#about">Hakkımızda</a></li>
-          <li class="has-submenu">
-            <a href="#">Hizmet Alanlarımız <span class="arrow">&#9662;</span>
-            </a>
+          <li class="submenu-parent">
+            <a href="#">Hizmet Alanlarımız <i class="fas fa-caret-down"></i></a>
             <ul class="submenu">
               <li><a href="ceza.html">Ceza Hukuku</a></li>
-              <li><a href="bosanma.html">Boşanma Hukuku</a></li>
+              <li><a href="aile.html">Aile Hukuku</a></li>
               <li><a href="sigorta.html">Sigorta Hukuku</a></li>
               <li><a href="miras.html">Miras Hukuku</a></li>
-              <li><a href="tapu.html">Tapu Hukuku</a></li>
+              <li><a href="tapu.html">Tapu İptali ve Tescil</a></li>
               <li><a href="icra.html">İcra Hukuku</a></li>
             </ul>
           </li>
+          <li><a href="index.html#about">Hakkımızda</a></li>
           <li><a href="index.html#contact">İletişim</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
       <div class="mobile-menu-icon">
@@ -132,7 +134,7 @@
   </section>
 
   <footer>
-    <div class="container">
+    <div class="footer">
       <ul class="social">
         <li><a href="https://www.instagram.com/kahanhukuk/" target="_blank">Instagram</a></li>
         <li><a href="https://www.linkedin.com/in/g%C3%B6kay-kahan-a706ab225/" target="_blank">LinkedIn</a></li>

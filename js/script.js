@@ -48,11 +48,51 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const servicesItem = document.querySelector('.services > a');
-  servicesItem.addEventListener('click', function(e) {
+  servicesItem.addEventListener('click', function (e) {
     e.preventDefault();
     const parentLi = this.parentElement;
     parentLi.classList.toggle('open');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const submenuParent = document.querySelector('.submenu-parent');
+  const submenuToggle = document.querySelector('.submenu-toggle');
+  const submenu = document.querySelector('.submenu');
+
+  submenuToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    submenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!submenuParent.contains(e.target)) {
+      submenu.classList.remove('active');
+    }
+  });
+});
+document.querySelectorAll('.submenu-toggle').forEach(toggle => {
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    const submenu = this.nextElementSibling;
+    if (submenu.style.display === 'block') {
+      submenu.style.display = 'none';
+    } else {
+      submenu.style.display = 'block';
+    }
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const toggles = document.querySelectorAll('.submenu-toggle');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parentLi = this.parentElement;
+      const submenu = parentLi.querySelector('.submenu');
+      submenu.classList.toggle('open');
+    });
   });
 });

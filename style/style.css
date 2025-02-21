@@ -1,5 +1,5 @@
    :root {
-     --start-color: #344137;
+     --start-color: #000000;
      --end-color: #646464;
      --primary-color: #b6b6b6;
      --secondary-color: #e0e0e0;
@@ -9,8 +9,6 @@
      --overlay-color: transparent;
      --btn-bg: var(--primary-color);
      --btn-hover: var(--secondary-color);
-     --sidebar-width: 220px;
-     --sidebar-hover: #444444;
      border-color: #344137;
    }
 
@@ -29,11 +27,6 @@
      overflow-x: hidden;
    }
 
-   img {
-     max-width: 100%;
-     height: auto;
-     display: block;
-   }
 
    .container {
      max-width: 100%;
@@ -85,12 +78,19 @@
      text-decoration: none;
    }
 
+   .main-nav {
+     display: flex;
+     align-items: center;
+   }
+
    .main-nav ul {
      display: flex;
      list-style: none;
      gap: 1.5rem;
-     max-width: 100%;
-     overflow-x: hidden;
+   }
+
+   .main-nav ul li {
+     position: relative;
    }
 
    .main-nav ul li a {
@@ -98,11 +98,13 @@
      font-weight: 600;
      color: var(--text-color);
      transition: color 0.3s ease;
+     display: inline-block;
    }
 
    .main-nav ul li a:hover {
      color: darkorange;
    }
+
 
    .mobile-menu-icon {
      display: none;
@@ -130,62 +132,40 @@
      }
    }
 
-   .has-submenu {
+   .submenu-parent ul {
      display: none;
-     position: relative;
-   }
-
-   .has-submenu .submenu {
-     position: fixed;
-     top: 100%;
-     left: 0;
-     z-index: 9999;
-   }
-
-   .arrow {
-     margin-left: 5px;
-     font-size: 0.8rem;
    }
 
    .submenu {
+     display: block;
+     position: absolute;
+     background-color: #3d2f2598;
+     padding: 0;
+     margin: 0;
      list-style: none;
-     display: none;
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100vh;
-     background: rgba(0, 0, 0, 0.9);
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     gap: 3rem;
-     z-index: 999;
-     transition: all 0.3s ease-in-out;
    }
 
    .submenu li a {
      display: block;
-     text-decoration: none;
-     font-size: 1rem;
-     padding: 0.5rem 1rem;
      color: #fff;
-     text-align: center;
+     padding: 20px 20px;
+     text-decoration: none;
+     gap: 10px;
    }
 
-   .submenu li a:hover {
-     background: darkorange;
+   .submenu-parent {
+     position: relative;
    }
 
-   .has-submenu:hover .submenu {
-     display: inline-block;
+   .submenu-parent:hover .submenu {
+     display: block;
    }
 
    .hero {
      height: 100vh;
      position: relative;
-     background: url('../assets/anasayfa.jpg') no-repeat center center;
+     background: linear-gradient(rgba(0, 0, 0, 0.7),
+         rgba(0, 0, 0, 0.7)), url('../assets/anasayfa.jpg') no-repeat center center;
      background-attachment: scroll;
      background-size: cover;
      display: flex;
@@ -286,51 +266,6 @@
      text-align: center;
    }
 
-   .sidebar {
-     margin-top: 200px;
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: var(--sidebar-width);
-     height: 100vh;
-     display: flex;
-     flex-direction: column;
-     z-index: 999;
-     transition: width 0.3s ease;
-     overflow-y: auto;
-   }
-
-   .sidebar-menu {
-     list-style: none;
-     padding: 1rem;
-     flex: 1;
-   }
-
-   .sidebar a {
-     text-shadow:
-       -0.5px -0.5px 0 black,
-       0.5px -0.5px 0 black,
-       -0.5px 0.5px 0 black,
-       0.5px 0.5px 0 black;
-   }
-
-   .sidebar-menu li {
-     margin-bottom: 1rem;
-   }
-
-   .sidebar-menu li a {
-     display: flex;
-     align-items: center;
-     gap: 0.5rem;
-     text-decoration: none;
-     color: var(--sidebar-fg);
-     padding: 0.5rem 0.8rem;
-     border-radius: 4px;
-   }
-
-   .sidebar-menu li a:hover {
-     background: orange;
-   }
 
    .about p {
      max-width: 800px;
@@ -342,7 +277,8 @@
    .contact {
      position: relative;
      min-height: 100vh;
-     background: url('../assets/iletisim.jpg') no-repeat center center;
+     background: linear-gradient(rgba(0, 0, 0, 0.7),
+         rgba(0, 0, 0, 0.7)), url('../assets/iletisim.jpg') no-repeat center center;
      background-attachment: scroll;
      background-size: cover;
      display: flex;
@@ -396,6 +332,7 @@
      gap: 1rem;
      margin-bottom: 0.5rem;
      padding: 0;
+     font-size: 1rem;
    }
 
    .footer .social li a {
@@ -564,9 +501,6 @@
        padding: 0.6rem 1.2rem;
      }
 
-     .sidebar {
-       display: none;
-     }
    }
 
    @media (max-width: 480px) {
