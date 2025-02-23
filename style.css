@@ -165,7 +165,7 @@ section[id] {
   height: 100vh;
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)), url('../assets/anasayfa.jpg') no-repeat center center;
+      rgba(0, 0, 0, 0.7)), url('assets/anasayfa.jpg') no-repeat center center;
   background-attachment: scroll;
   background-size: cover;
   display: flex;
@@ -295,7 +295,7 @@ section[id] {
   position: relative;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)), url('../assets/iletisim.jpg') no-repeat center center;
+      rgba(0, 0, 0, 0.5)), url('assets/iletisim.jpg') no-repeat center center;
   background-attachment: scroll;
   background-size: cover;
   display: flex;
