@@ -4,6 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kahan Hukuk, uzman ekibi ve kapsamlı hukuki danışmanlık hizmetleriyle boşanma, icra, miras, sigorta, tapu ve diğer hukuk alanlarında adaletin sağlanmasına katkıda bulunur.">
+  <meta name="keywords"
+    content="hukuk, danışmanlık, avukat, boşanma hukuku, icra hukuku, miras hukuku, sigorta hukuku, tapu hukuku, Kahan Hukuk">
+  <meta property="og:title" content="Kahan Hukuk - Danışmanlık">
+  <meta property="og:description"
+    content="Uzman ekibimizle hukuki danışmanlık, dava takibi ve çözümsel hizmetler sunuyoruz.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Kahan Hukuk">
   <title>Kahan Hukuk - Danışmanlık</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style/style.css" />
@@ -21,24 +32,27 @@
       </div>
       <nav class="main-nav">
         <ul>
-          <li><a href="#main">Ana Sayfa</a></li>
-          <li><a href="#about">Hakkımızda</a></li>
+          <li class="submenu-parent">
+            <a href="#main">Ana Sayfa</a>
+          </li>
           <li class="submenu-parent">
             <a href="#">Hizmet Alanlarımız <i class="fas fa-caret-down"></i></a>
             <ul class="submenu">
-              <li><a href="ceza.html">Ceza Hukuku</a></li>
               <li><a href="aile.html">Aile Hukuku</a></li>
-              <li><a href="sigorta.html">Sigorta Hukuku</a></li>
-              <li><a href="miras.html">Miras Hukuku</a></li>
-              <li><a href="tapu.html">Tapu İptali ve Tescil</a></li>
+              <li><a href="ceza.html">Ceza Hukuku</a></li>
               <li><a href="icra.html">İcra Hukuku</a></li>
+              <li><a href="miras.html">Miras Hukuku</a></li>
+              <li><a href="sigorta.html">Sigorta Hukuku</a></li>
+              <li><a href="tapu.html">Tapu İptali ve Tescil</a></li>
             </ul>
           </li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="#contact">İletişim</a></li>
+          <li class="submenu-parent">
+            <a href="#about">Hakkımızda</a>
+          </li>
+          <li><a href="#footer">İletişim</a></li>
         </ul>
       </nav>
-      
       <div class="mobile-menu-icon">
         <span></span>
         <span></span>
@@ -85,7 +99,7 @@
           <p>Her türlü hukuki soru ve danışmanlık için bizimle iletişime geçebilirsiniz.</p>
           <a href="https://api.whatsapp.com/send?phone=90" target="_blank" class="btn-primary">Mesaj Gönderin</a>
         </div>
-        <div class="footer">
+        <div class="footer" id="footer">
           <ul class="social">
             <li><a href="https://www.instagram.com/kahanhukuk/" target="_blank">Instagram</a></li>
             <li><a href="https://www.linkedin.com/in/g%C3%B6kay-kahan-a706ab225/" target="_blank">LinkedIn</a></li>
@@ -95,7 +109,6 @@
       </div>
     </section>
   </main>
-  <script src="js/script.js" defer></script>
 </body>
 
 </html>
